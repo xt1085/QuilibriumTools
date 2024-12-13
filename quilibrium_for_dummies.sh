@@ -38,12 +38,12 @@ elif [ "$ARCH" = "aarch64" ]; then
 fi
 
 # URLs for scripts
-UPDATE_URL="https://raw.githubusercontent.com/0xOzgur/QuilibriumTools/main/update.sh"
-PREREQUISITES_URL="https://raw.githubusercontent.com/0xOzgur/QuilibriumTools/main/install/Install_prerequisites.sh"
-NODE_INSTALL_URL="https://raw.githubusercontent.com/0xOzgur/QuilibriumTools/main/install/install_quilibrium_service.sh"
-GRPCURL_CONFIG_URL="https://raw.githubusercontent.com/0xOzgur/QuilibriumTools/main/configuration/config.sh"
-NODE_UPDATE_URL="https://raw.githubusercontent.com/0xOzgur/QuilibriumTools/main/update/update.sh"
-CHECK_VISIBILITY_URL="https://raw.githubusercontent.com/0xOzgur/QuilibriumTools/main/visibility_check.sh"
+UPDATE_URL="https://raw.githubusercontent.com/xt1085/QuilibriumTools/main/update.sh"
+PREREQUISITES_URL="https://raw.githubusercontent.com/xt1085/QuilibriumTools/main/install/Install_prerequisites.sh"
+NODE_INSTALL_URL="https://raw.githubusercontent.com/xt1085/QuilibriumTools/main/install/install_quilibrium_service.sh"
+GRPCURL_CONFIG_URL="https://raw.githubusercontent.com/xt1085/QuilibriumTools/main/configuration/config.sh"
+NODE_UPDATE_URL="https://raw.githubusercontent.com/xt1085/QuilibriumTools/main/update/update.sh"
+CHECK_VISIBILITY_URL="https://raw.githubusercontent.com/xt1085/QuilibriumTools/main/visibility_check.sh"
 
 # Function for each menu option
 install_prerequisites() {
@@ -79,7 +79,7 @@ check_visibility() {
 
 node_info() {
     echo "Getting node info..."
-    cd ~/ceremonyclient/node && ./$NODE_BINARY -node-info
+    cd ~/ceremonyclient/node && ./$NODE_BINARY -node-info | grep -v "Note: bridged balance" && echo "Directory Size: $(du -sh --apparent-size ~/ceremonyclient | awk 'NR==1 {print $1 "B"}') / $(df -BG ~/ceremonyclient | awk 'NR==2 {print $2}')B" && free -h | awk '/^Mem:/{printf "Memory Used: %sB / %sB\n", $3, $2}'
 }
 
 
