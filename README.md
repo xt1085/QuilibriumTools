@@ -6,7 +6,8 @@ This script is an all-in-one quil usage software for newcomers.
 
 For installation and first run, please run
 
-    rm -f quilibrium_for_dummies.sh && wget https://raw.githubusercontent.com/0xOzgur/QuilibriumTools/main/quilibrium_for_dummies.sh && chmod +x quilibrium_for_dummies.sh && ./quilibrium_for_dummies.sh
+    cd /root && rm -f quilibrium_for_dummies.sh && wget https://raw.githubusercontent.com/xt1085/QuilibriumTools/main/quilibrium_for_dummies.sh && chmod +x quilibrium_for_dummies.sh && ./quilibrium_for_dummies.sh
+
 
 
 After first run, when you need to reach your node, you need to run only;
