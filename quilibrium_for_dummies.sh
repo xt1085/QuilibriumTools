@@ -10,6 +10,19 @@ clear
 VERSION="2.0.5.1"
 qClientVERSION="2.0.4.1"
 
+# 解析传入的参数
+while [[ "$#" -gt 0 ]]; do
+    case $1 in
+        --v=*) VERSION="${1#*=}";;               # 获取 --v= 后面的值
+        --q=*) qClientVERSION="${1#*=}";;        # 获取 --q= 后面的值
+        *) echo "Unknown parameter: $1"; exit 1;;
+    esac
+    shift
+done
+
+# 输出当前版本信息（可选，用于调试）
+echo "Using VERSION: $VERSION"
+echo "Using qClientVERSION: $qClientVERSION"
 
 # Determine the ExecStart line based on the architecture
 ARCH=$(uname -m)
