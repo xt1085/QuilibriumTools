@@ -7,7 +7,7 @@ clear
 
 # Set the version number
 
-VERSION="2.0.5.1"
+VERSION="2.0.6"
 qClientVERSION="2.0.4.1"
 
 # 解析传入的参数
